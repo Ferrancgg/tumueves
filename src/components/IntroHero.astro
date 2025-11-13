@@ -1,0 +1,110 @@
+---
+const {
+  actionUrl = "https://tu-endpoint-de-systeme.io",
+  privacyUrl = "/privacidad"
+} = Astro.props;
+---
+<section class="intro">
+  <!-- H1 semántico opcional oculto para SEO -->
+  <h1 class="sr-only">Tú Mueves</h1>
+  <p>No sé cómo has llegado hasta aquí, pero si buscas diversión, cosas fáciles o falsas esperanzas, estás en el sitio equivocado.</p>
+  <p>Aquí no vas a encontrar excusas. Esta página existe para que te mires de frente y <strong>asumas tu parte de responsabilidad</strong>. No vale poner la culpa fuera. Tu salud es <strong>tuya</strong>. Y tú decides qué haces con ella.</p>
+  <p>Ser consciente implica esfuerzo. Mirar lo que no te gusta, aceptar lo que haces mal y hacer algo distinto. Si sigues aquí, algo dentro de ti ya ha empezado a moverse.</p>
+  <p><strong>Sí se puede cambiar.</strong> Cuesta, pero se puede. Sobre todo si no estás solo, si tienes guía, si pones conciencia y te comprometes: comer mejor, dejar tabaco o alcohol, moverte más, cuidarte como mereces.</p>
+  <p>Yo quiero que estés bien. La pregunta es: <strong>¿tú te quieres?</strong> ¿Lo suficiente como para cambiar?</p>
+
+  <!-- H1 visible al final -->
+  <h1 class="final-title">TÚ MUEVES</h1>
+  <p class="sub">El apoyo diario que necesitas para tomar conciencia de tu salud.</p>
+  <section class="cuadrados"><div class="cuadrado1">
+    </div>
+    <div class="cuadrado2"></div>
+    <div class="cuadrado3"></div>
+    <div class="cuadrado4"></div>
+</section>
+
+  <form class="form" method="POST" action={actionUrl} aria-label="Suscripción a apoyo diario">
+    <label class="sr-only" for="name">Nombre</label>
+    <input id="name" name="name" type="text" placeholder="Tu nombre" required>
+
+    <label class="sr-only" for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="Tu email" required inputmode="email" autocomplete="email">
+
+    <label class="gdpr">
+      <input type="checkbox" name="gdpr" required>
+      Acepto recibir correos con consejos, recursos y ofertas. He leído la
+      <a href="/privacidad" target="_blank" rel="noopener">Política de privacidad</a>.
+    </label>
+
+    <button type="submit" class="btn">Quiero empezar</button>
+
+    <p class="disclaimer">
+      Recibirás apoyo, ideas y herramientas. También te ofreceré programas:
+      no por tu dinero, sino por tu <strong>compromiso</strong>. A veces pagar es la diferencia entre hacerlo y no hacerlo.
+    </p>
+  </form>
+
+  <ul class="bullets" aria-label="Qué vas a encontrar">
+    <li>Hábitos, salud, movimiento, consciencia.</li>
+    <li>Consejos directos, sin humo ni excusas.</li>
+    <li>Años de consulta, directo para ti.</li>
+  </ul>
+</section>
+
+<style>
+  .intro{max-width:820px;margin:0 auto;padding:clamp(2rem,4vw,4rem) 1.25rem}
+  p{margin:0 0 1.1rem 0;font-size:1.05rem}
+  .final-title{
+    font-family:Manrope,system-ui,sans-serif;font-size:clamp(2rem,6vw,3rem);
+    font-weight:800;letter-spacing:-.02em;text-align:center;margin:2.5rem 0 .5rem
+  }
+  .sub{text-align:center;color:var(--muted);font-size:1.1rem;margin:0 0 1.5rem}
+  .form{
+    display:grid;gap:.75rem;grid-template-columns:1fr 1fr auto;align-items:center;margin:0 0 1.25rem
+  }
+  .form input{
+    padding:.9rem 1rem;border:1px solid rgba(0,0,0,.12);border-radius:14px;background:#fff;font-size:1rem
+  }
+  .form .gdpr{
+    grid-column:1 / -1;display:flex;gap:.5rem;align-items:flex-start;font-size:.9rem;color:var(--muted)
+  }
+  .btn{padding:.95rem 1.25rem;border:0;border-radius:14px;background:var(--text);color:#fff;font-weight:700;cursor:pointer}
+  .btn:hover{filter:brightness(.95)}
+  .disclaimer{grid-column:1 / -1;font-size:.9rem;color:var(--muted);margin:.25rem 0 0}
+  .bullets{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:.5rem;color:var(--text)}
+  @media (max-width:820px){ .form{grid-template-columns:1fr} }
+  .cuadradros{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom:2rem;
+  }
+  .cuadrado1{
+    width:100px;
+    height:100px;
+    background-color:var(--color1);
+    margin:auto;
+    margin-bottom:2rem;
+  }
+  .cuadrado2{
+    width:100px;
+    height:100px;
+    background-color:var(--color2);
+    margin:auto;
+    margin-bottom:2rem;
+  }
+  .cuadrado3{
+    width:100px;
+    height:100px;
+    background-color:var(--color3);
+    margin:auto;
+    margin-bottom:2rem;
+  }
+  .cuadrado4{
+    width:100px;
+    height:100px;
+    background-color:var(--white);
+    margin:auto;
+    margin-bottom:2rem;
+  }
+</style>

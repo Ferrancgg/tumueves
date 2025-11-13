@@ -1,22 +1,54 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import Header from '../components/Header.astro';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dj50wjowc/image/upload/v1763031270/tu_mueves_logo_edges_jjmzmi.svg" />
+    <title>Tú Mueves</title>
+    <meta name="description" content="Tú Mueves — hábitos, consciencia y responsabilidad personal en tu salud." />
+    <meta name="theme-color" content="#F7F6F2" />
+
+    <style is:global>
+    :root {
+  /* --bg: #f9f6ef; */
+  --bg: #f2ebdf;
+  /* --text: #252d22; */
+  --text: #373636;
+  --color1:#5f8b5f;
+  --color2:#a68eb3;
+  --color3:#54326f;
+  --white:#ffffff;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg);
+  color: var(--text);
+}
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0;
+      }
+    </style>
+  </head>
+
+  <body>
+	<Header/>
+	
+
+    
+
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
