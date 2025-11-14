@@ -5,10 +5,14 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro preview --host",
+    "astro": "astro",
+    "start": "npx serve dist"
+
   },
   "dependencies": {
     "astro": "^5.15.5"
   }
+ 
+
 }
