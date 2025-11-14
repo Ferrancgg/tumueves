@@ -6,9 +6,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "start": "npx serve dist"
+
   },
   "dependencies": {
     "astro": "^5.15.5"
   }
+ 
+
 }
