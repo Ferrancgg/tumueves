@@ -2,14 +2,13 @@
   "name": "tumueves",
   "type": "module",
   "version": "0.0.1",
-  "scripts": {
-  
+ 
+"scripts": {
   "dev": "astro dev",
   "build": "astro build",
   "preview": "astro preview --host",
-  "start": "npx serve -s dist -l $PORT"
+  "start": "vite preview --host --port $PORT"
 },
-
 
   "dependencies": {
     "astro": "^5.15.5"
